@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { AudioInterface, AudioPlayerRef } from './core.interface';
 import { iconPaths } from '../helpers/icons/icons';
