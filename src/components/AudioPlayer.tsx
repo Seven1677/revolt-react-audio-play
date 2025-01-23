@@ -390,7 +390,7 @@ export const AudioPlayer = forwardRef<AudioPlayerRef | undefined, AudioInterface
             </svg>
           </span>
         )}
-        {!canPlay && !hasError && (
+        {/* {!canPlay && !hasError && (
           <div className="rap-loading">
             <div className="rap-spinner"></div>
           </div>
@@ -401,10 +401,9 @@ export const AudioPlayer = forwardRef<AudioPlayerRef | undefined, AudioInterface
               <path fill={color ?? '#566574'} fillRule="evenodd" d={isPlaying ? iconPaths.pause : iconPaths.play} />
             </svg>
           </div>
-        )}
+        )} */}
 
         <div className="rap-controls">
-          <span className="rap-current-time">{currentTime}</span>
           <div className="rap-slider" data-direction="horizontal" onMouseDown={handleRewindDragging} onTouchStart={handleRewindDragging} onClick={rewind}>
             <div
               className="rap-progress"
@@ -423,10 +422,13 @@ export const AudioPlayer = forwardRef<AudioPlayerRef | undefined, AudioInterface
               ></div>
             </div>
           </div>
-          {totalTime !== '--:--' && <span className="rap-total-time">{totalTime}</span>}
+          <div className="rap-time-wrapper">
+            <span className="rap-current-time">{currentTime}</span>
+            {totalTime !== '--:--' && <span className="rap-total-time">{totalTime}</span>}
+          </div>
         </div>
 
-        <div className="rap-volume">
+        {/* <div className="rap-volume">
           <div className={`rap-volume-btn ${volumeOpen ? 'rap-volume-open' : ''}`} onClick={() => setVolumeOpen((vol) => !vol)}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path fill={volumeOpen ? sliderColor ?? '#007FFF' : color ?? '#566574'} fillRule="evenodd" d={speakerIcon} />
@@ -461,7 +463,7 @@ export const AudioPlayer = forwardRef<AudioPlayerRef | undefined, AudioInterface
             </div>
             <div className="rap-backdrop" onClick={() => setVolumeOpen(false)}></div>
           </div>
-        </div>
+        </div> */}
 
         <audio
           loop={loop}

@@ -1,7 +1,6 @@
 .rap-container {
-  max-width: 400px;
   height: 56px;
-  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.07);
+  /* box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.07); */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,7 +9,7 @@
   border-radius: 4px;
   user-select: none;
   -webkit-user-select: none;
-  background-color: #fff;
+  background-color: transparent;
   color: #55606e;
 }
 .rap-container:focus {
@@ -19,6 +18,13 @@
 .rap-container .rap-current-time,
 .rap-container .rap-total-time {
   min-width: 40px;
+  width: 100%;
+}
+.rap-time-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 .rap-container .rap-total-time {
   text-align: right;
@@ -41,7 +47,7 @@
   position: relative;
 }
 .rap-container .rap-slider .rap-progress {
-  background-color: #007fff;
+  background-color: white;
   border-radius: inherit;
   position: absolute;
   pointer-events: none;
@@ -50,7 +56,7 @@
   height: 16px;
   width: 16px;
   border-radius: 8px;
-  background-color: #007fff;
+  background-color: white;
   position: absolute;
   pointer-events: all;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.32);
@@ -60,17 +66,18 @@
   font-size: 16px;
   line-height: 18px;
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
   justify-content: space-between;
   align-items: center;
-  margin-left: 24px;
-  margin-right: 24px;
+  gap: 8px;
 }
 .rap-container .rap-controls .rap-slider {
   margin-left: 12px;
   margin-right: 12px;
   border-radius: 2px;
   height: 4px;
+  width: 100%;
 }
 .rap-container .rap-controls .rap-slider .rap-progress {
   width: 0;
